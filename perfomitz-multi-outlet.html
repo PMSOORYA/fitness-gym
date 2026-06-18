@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PERFOMITZ Fitness Centre is a full-service gym in Kakkattil, Kozhikode offering strength training, cardio workouts, HIIT, CrossFit-style sessions, personal training, nutrition guidance, showers and locker facilities." />
+  <meta name="keywords" content="Gym in Kakkattil, Perfomitz Fitness, Gym in Kozhikode, Fitness centre Kakkattil, Personal training Kozhikode, HIIT Kakkattil, Strength training Kerala, CrossFit style gym, WhatsApp gym admission" />
+  <meta property="og:title" content="PERFOMITZ Fitness | Gym & Training Centre in Kakkattil Kozhikode" />
+  <meta property="og:description" content="Full-service gym in Kakkattil, Kozhikode with strength training, cardio workouts, HIIT, CrossFit-style sessions, personal training and nutrition support." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#f7f4ee" />
+  <title>PERFOMITZ Fitness | Gym & Training Centre in Kakkattil Kozhikode</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /*
+      PERFOMITZ — F45-inspired conversion structure
+      Replace local asset paths with real gym media:
+      assets/videos/gym-hero.mp4
+      assets/images/class-strength.jpg
+      assets/images/class-hiit.jpg
+      assets/images/class-functional.jpg
+      assets/images/class-personal-training.jpg
+      assets/images/trainer-1.jpg ...
+      assets/images/community-1.jpg ...
+    */
+
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+    :root{
+      --bg-dark:#070707;
+      --bg-light:#f7f4ee;
+      --bg-soft:#eee9df;
+      --card-light:#ffffff;
+      --text-dark:#111111;
+      --text-gray:#555555;
+      --text-muted-light:#777777;
+      --text-light:#f5f5f5;
+      --text-dim-light:#999999;
+      --accent-red:#ff2d00;
+      --accent-red-glow:#ff5a2b;
+      --accent-lime:#bfff00;
+      --accent-gold:#d4a853;
+      --border-light:rgba(0,0,0,.08);
+      --border-medium:rgba(0,0,0,.12);
+      --shadow-soft:0 24px 70px rgba(0,0,0,.08);
+      --shadow-card:0 4px 20px rgba(0,0,0,.06);
+      --font-display:'Bebas Neue',sans-serif;
+      --font-body:'DM Sans',sans-serif;
+      --radius:6px;
+      --radius-lg:18px;
+      --max:1280px;
+      --ease:cubic-bezier(.22,.61,.36,1);
+      --transition:.35s var(--ease);
+    }
+
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;width:100%;overflow-x:hidden}
+    body{font-family:var(--font-body);background:var(--bg-light);color:var(--text-dark);overflow-x:hidden;line-height:1.6;font-weight:400;width:100%;max-width:100vw}
+    body.loading{overflow:hidden}
+    a{color:inherit;text-decoration:none}
+    ul{list-style:none}
+    img,video{max-width:100%;display:block;height:auto}
+    img{object-fit:cover}
+    button,input,select,textarea{font-family:var(--font-body);border:none;outline:none}
+    button{cursor:pointer;background:none;color:inherit}
+    section{position:relative;padding:100px 24px}
+    .container{width:min(100% - 48px, var(--max));margin-inline:auto}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    body::before{display:none}
+    body::after{display:none}
+
+    /* PRELOADER */
+    #preloader{position:fixed;inset:0;z-index:99999;background:var(--bg-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s ease,visibility .6s ease}
+    #preloader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+    .preloader-inner{position:relative;display:flex;flex-direction:column;align-items:center}
+    .preloader-barbell{position:relative;width:220px;height:6px;background:rgba(255,255,255,.1);border-radius:3px;margin-bottom:40px;overflow:visible}
+    .preloader-barbell::before{content:"";position:absolute;left:0;top:0;height:100%;width:0;background:var(--accent-red);border-radius:3px;animation:load-bar 1.4s cubic-bezier(.65,0,.35,1) forwards;box-shadow:0 0 20px var(--accent-red)}
+    .preloader-barbell::after{content:"";position:absolute;top:50%;left:0;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;background:var(--bg-dark);border:3px solid var(--accent-red);z-index:2;animation:load-plate 1.4s cubic-bezier(.65,0,.35,1) forwards;box-shadow:0 0 15px rgba(255,45,0,.4)}
+    .preloader-logo{font-family:var(--font-display);font-size:48px;letter-spacing:4px;color:var(--text-light);opacity:0;animation:preloader-reveal .55s .25s ease forwards}
+    .preloader-logo span{color:var(--accent-red)}
+    .preloader-tagline{font-size:12px;letter-spacing:4px;color:rgba(255,255,255,.4);margin-top:8px;opacity:0;animation:preloader-reveal .55s .55s ease forwards;text-transform:uppercase}
+    .preloader-sparks{position:absolute;display:flex;gap:3px;bottom:-30px;left:50%;transform:translateX(-50%);opacity:0;animation:preloader-reveal .5s .9s ease forwards}
+    .preloader-sparks span{width:3px;height:12px;background:var(--accent-red);border-radius:1px;animation:spark-pulse .8s ease infinite}
+    .preloader-sparks span:nth-child(odd){animation-delay:.4s;background:var(--accent-gold)}
+    @keyframes load-bar{0%{width:0}75%,100%{width:100%}}
+    @keyframes load-plate{0%{left:0}75%,100%{left:100%}}
+    @keyframes preloader-reveal{to{opacity:1}}
+    @keyframes spark-pulse{0%,100%{transform:scaleY(.4);opacity:.3}50%{transform:scaleY(1);opacity:1}}
+
+    /* TYPOGRAPHY */
+    h1,h2,h3,.display-font{font-family:var(--font-display);font-weight:400;line-height:.92;text-transform:uppercase;letter-spacing:.02em;color:var(--text-dark)}
+    .section-kicker{font-family:var(--font-display);font-size:14px;letter-spacing:4px;color:var(--accent-red);display:inline-flex;align-items:center;gap:10px;margin-bottom:14px;text-transform:uppercase}
+    .section-kicker::before{content:"";width:30px;height:2px;background:var(--accent-red)}
+    .section-title{font-size:clamp(42px,8vw,78px);margin-bottom:16px;color:var(--text-dark)}
+    .section-title em{color:var(--accent-red);font-style:normal}
+    .section-subtitle{font-size:17px;color:var(--text-gray);max-width:660px;margin-bottom:48px;font-weight:400;line-height:1.8}
+    .center{text-align:center}.center .section-subtitle{margin-left:auto;margin-right:auto}.center .section-kicker::after{content:"";width:30px;height:2px;background:var(--accent-red)}
+
+    /* BUTTONS */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 28px;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:1.3px;border-radius:var(--radius);transition:all var(--transition);position:relative;overflow:hidden;min-height:48px;white-space:nowrap}
+    .btn i{font-size:15px}
+    .btn-primary{background:var(--accent-red);color:#fff;border:1px solid transparent;box-shadow:0 10px 34px rgba(255,45,0,.18)}
+    .btn-primary::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.16),transparent 45%);opacity:.8;pointer-events:none}
+    .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.12);box-shadow:0 18px 46px rgba(255,45,0,.26)}
+    .btn-lime{background:var(--accent-lime);color:#0a0a0a;border:1px solid transparent;box-shadow:0 12px 34px rgba(191,255,0,.13)}
+    .btn-lime:hover{transform:translateY(-2px);filter:brightness(1.05);box-shadow:0 18px 46px rgba(191,255,0,.18)}
+    .btn-outline{background:transparent;color:var(--text-dark);border:1px solid var(--border-medium)}
+    .btn-outline:hover{background:var(--text-dark);color:#fff;transform:translateY(-2px)}
+    .btn-outline-light{background:rgba(255,255,255,.05);color:var(--text-light);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+    .btn-outline-light:hover{border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.1);transform:translateY(-2px)}
+    .btn-ghost{color:var(--text-dark);padding-left:0;padding-right:0;min-height:auto;border-bottom:1px solid rgba(255,45,0,.65);border-radius:0}
+    .btn-ghost:hover{color:var(--accent-red);transform:translateX(4px)}
+    .btn-sm{padding:10px 18px;font-size:12px;min-height:40px}
+
+    /* NAVIGATION */
+    .nav{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:18px 28px;transition:all .35s ease}
+    .nav.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border-light);padding:12px 28px;box-shadow:0 2px 20px rgba(0,0,0,.06)}
+    .nav.scrolled .nav-logo,.nav.scrolled .nav-logo span{color:var(--text-dark)}
+    .nav.scrolled .nav-logo{color:var(--accent-red)}
+    .nav.scrolled .nav-links a{color:var(--text-gray)}
+    .nav.scrolled .nav-links a:hover,.nav.scrolled .nav-links a.active{color:var(--text-dark)}
+    .nav.scrolled .nav-hamburger span{background:var(--text-dark)}
+    .nav-inner{width:min(100% - 32px,1440px);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .nav-logo{font-family:var(--font-display);font-size:30px;color:var(--accent-red);letter-spacing:2px;position:relative;z-index:1001;line-height:1;flex-shrink:0;white-space:nowrap}
+    .nav-logo span{color:var(--text-light)}
+    .nav-links{display:flex;align-items:center;justify-content:center;gap:clamp(18px,2vw,36px);flex:1;min-width:0}
+    .nav-links a{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.75);transition:color .25s;position:relative;padding:8px 0;white-space:nowrap}
+    .nav-links a::after{content:"";position:absolute;bottom:4px;left:0;width:0;height:2px;background:var(--accent-red);transition:width .28s ease}
+    .nav-links a:hover,.nav-links a.active{color:#fff}
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+    .nav-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;z-index:1001;padding:8px;flex-shrink:0}
+    .nav-hamburger span{display:block;width:28px;height:2.5px;background:#fff;transition:all .3s ease;transform-origin:center}
+    .nav-hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .nav-hamburger.active span:nth-child(2){opacity:0;transform:scaleX(0)}
+    .nav-hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+    .mobile-menu{position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(255,255,255,.98);z-index:999;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all .35s ease;padding:30px}
+    .mobile-menu.active{opacity:1;visibility:visible}
+    .mobile-menu ul{text-align:center;display:flex;flex-direction:column;gap:22px;width:100%}
+    .mobile-menu a{font-family:var(--font-display);font-size:34px;color:var(--text-dark);text-transform:uppercase;letter-spacing:2px;transition:color .3s;line-height:1}
+    .mobile-menu a:hover{color:var(--accent-red)}
+    .mobile-menu .btn{font-family:var(--font-body);font-size:14px;width:100%;max-width:320px;margin:6px auto 0}
+
+    /* HERO */
+    .hero{min-height:100svh;display:flex;align-items:center;overflow:hidden;padding:120px 0 60px;isolation:isolate;position:relative}
+    .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none}
+    .hero-video-desktop{display:block}
+    .hero-video-mobile{display:none}
+    .hero-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.86),rgba(0,0,0,.55),rgba(0,0,0,.72)),linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.92))}
+    .hero-vignette{position:absolute;inset:0;z-index:2;background:radial-gradient(ellipse at center,transparent 34%,rgba(0,0,0,.72) 100%);pointer-events:none}
+    .hero-accent-line{display:none}
+    .hero-inner{position:relative;z-index:3;width:min(100% - 48px,var(--max));margin:0 auto;display:flex;flex-direction:column;gap:28px}
+    .hero-content{max-width:760px;padding-top:0}
+    .hero-eyebrow{font-family:var(--font-display);font-size:12px;letter-spacing:6px;color:var(--accent-red);margin-bottom:18px;display:block;text-transform:uppercase;opacity:0;transform:translateY(16px)}
+    .hero-headline{font-size:clamp(72px,8vw,150px);line-height:.86;margin-bottom:28px;color:var(--text-light);max-width:980px;overflow:hidden}
+    .hero-headline .word{display:inline-block;opacity:0;transform:translateY(105%)}
+    .hero-headline .word-red{color:var(--accent-red);text-shadow:0 0 60px rgba(255,45,0,.25)}
+    .hero-subtext{font-size:clamp(17px,1.35vw,22px);color:rgba(255,255,255,.7);max-width:720px;margin-bottom:28px;font-weight:300;line-height:1.65;opacity:0;transform:translateY(22px)}
+    .hero-buttons{display:flex;gap:14px;flex-wrap:wrap;opacity:0;transform:translateY(22px);margin-bottom:0}
+    .hero-buttons .btn{min-height:56px;padding:0 34px}
+    .hero-trust{width:100%;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.34);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+    .hero-trust span{padding:14px 12px;text-align:center;text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:1.6px;color:rgba(255,255,255,.7);border-right:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;min-height:58px}
+    .hero-trust span:last-child{border-right:0;color:var(--accent-lime)}
+    .hero-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:980px}
+    .hero-stat{text-align:center;padding:0 24px;border-right:1px solid rgba(255,255,255,.12);min-width:0}
+    .hero-stat:last-child{border-right:0}
+    .hero-stat-number{font-family:var(--font-display);font-size:clamp(36px,3.5vw,58px);color:var(--text-light);line-height:1}
+    .hero-stat-label{font-size:11px;color:rgba(255,255,255,.48);letter-spacing:2px;margin-top:8px;text-transform:uppercase}
+    .hero-stat-divider{display:none}
+    .hero-scroll-indicator{position:absolute;right:28px;bottom:24px;z-index:4;color:rgba(255,255,255,.4);font-size:10px;letter-spacing:3px;text-transform:uppercase;display:flex;align-items:center;gap:8px;writing-mode:vertical-rl;opacity:.85}
+    .hero-scroll-indicator i{animation:bounce-down 1.6s infinite}
+    @keyframes bounce-down{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+
+    /* MARQUEE */
+    .marquee-section{background:var(--bg-dark);padding:26px 0;overflow:hidden;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+    .marquee-track{display:flex;width:max-content;animation:marquee-scroll 25s linear infinite}
+    .marquee-section:hover .marquee-track{animation-play-state:paused}
+    .marquee-text{font-family:var(--font-display);font-size:40px;color:var(--accent-red);white-space:nowrap;display:flex;gap:32px;align-items:center;flex-shrink:0;padding-right:32px}
+    .marquee-dot{width:10px;height:10px;background:var(--accent-red);border-radius:50%;flex-shrink:0}
+    @keyframes marquee-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    /* FREE TRIAL */
+    .trial-section{background:var(--bg-light);padding-top:80px;padding-bottom:80px}
+    .trial-card{display:grid;grid-template-columns:.95fr 1.15fr;gap:44px;align-items:center;padding:46px;border:1px solid var(--border-light);background:var(--card-light);border-radius:var(--radius-lg);position:relative;overflow:hidden;min-width:0;box-shadow:var(--shadow-soft)}
+    .trial-card::before{content:"";position:absolute;inset:auto -10% -46% auto;width:420px;height:420px;border-radius:50%;background:rgba(255,45,0,.04);filter:blur(70px);pointer-events:none}
+    .trial-copy h2{font-size:clamp(40px,6vw,68px);margin-bottom:18px;color:var(--text-dark)}.trial-copy p{color:var(--text-gray);font-size:17px;line-height:1.8;margin-bottom:24px;max-width:540px}
+    .trial-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;position:relative;z-index:1}
+    .trial-step{background:var(--bg-soft);border:1px solid var(--border-light);padding:24px;border-radius:12px;min-height:190px;display:flex;flex-direction:column;justify-content:space-between;transition:transform var(--transition),border-color var(--transition)}
+    .trial-step:hover{transform:translateY(-5px);border-color:rgba(255,45,0,.3)}
+    .step-number{font-family:var(--font-display);font-size:48px;color:var(--accent-red);line-height:1}.trial-step h3{font-size:24px;margin:14px 0 8px;color:var(--text-dark)}.trial-step p{font-size:13px;color:var(--text-gray);line-height:1.6}
+
+    /* ABOUT */
+    .about-section{background:var(--bg-soft)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:74px;align-items:center}
+    .about-text h2{font-size:clamp(40px,6vw,68px);margin-bottom:16px;color:var(--text-dark)}.about-text h2 em{color:var(--accent-red);font-style:normal}.about-text p{color:var(--text-gray);font-size:16px;line-height:1.85;margin-bottom:22px;font-weight:400;max-width:560px}
+    .about-images{position:relative;height:520px}.about-img{position:absolute;width:290px;height:370px;object-fit:cover;border-radius:var(--radius);box-shadow:0 30px 60px rgba(0,0,0,.15);filter:saturate(.9) contrast(1.05)}.about-img:nth-child(1){top:0;left:0;z-index:3;transform:rotate(-3deg)}.about-img:nth-child(2){top:70px;left:150px;z-index:2;transform:rotate(2deg)}.about-img:nth-child(3){top:150px;left:62px;z-index:1;transform:rotate(-1deg)}
+
+    /* PROGRAMS */
+    .programs{background:var(--bg-light)}
+    .programs-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:44px}.programs-head .section-subtitle{margin-bottom:0}
+    .programs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .program-card{background:var(--card-light);border-radius:var(--radius);border:1px solid var(--border-light);padding:0;position:relative;overflow:hidden;transition:all .32s ease;display:flex;flex-direction:column;isolation:isolate;min-width:0;box-shadow:var(--shadow-card)}
+    .program-card:hover{transform:translateY(-7px);border-color:rgba(255,45,0,.3);box-shadow:var(--shadow-soft)}
+    .program-media{height:190px;overflow:hidden;background:var(--bg-soft);position:relative}.program-media img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.05);transition:transform .65s ease,filter .65s ease}.program-card:hover .program-media img{transform:scale(1.06)}
+    .program-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.15))}
+    .program-content{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1}
+    .program-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.program-icon{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:rgba(255,45,0,.08);color:var(--accent-red);font-size:20px}.program-duration{font-size:11px;font-weight:800;color:var(--accent-red);text-transform:uppercase;letter-spacing:1px}
+    .program-name{font-size:30px;margin-bottom:10px;color:var(--text-dark)}.program-desc{font-size:14px;color:var(--text-gray);line-height:1.65;margin-bottom:16px;font-weight:400}
+    .program-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}.program-tag{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;padding:5px 10px;border-radius:999px;background:var(--bg-soft);color:var(--text-gray);border:1px solid var(--border-light)}
+    .program-card .btn{margin-top:auto;width:100%}
+
+    /* SCHEDULE */
+    .schedule-section{background:var(--bg-soft)}
+    .schedule-wrap{display:grid;grid-template-columns:.7fr 1.3fr;gap:34px;align-items:start}
+    .schedule-panel{position:sticky;top:92px;background:var(--card-light);border:1px solid var(--border-light);padding:28px;border-radius:var(--radius-lg);box-shadow:var(--shadow-card)}
+    .schedule-panel h3{font-size:34px;margin-bottom:12px;color:var(--text-dark)}.schedule-panel p{color:var(--text-gray);font-size:14px;line-height:1.75;margin-bottom:22px}
+    .schedule-tabs{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:18px}.schedule-tab{padding:12px 8px;background:var(--bg-soft);border:1px solid var(--border-light);color:var(--text-gray);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:1px;border-radius:8px;transition:all .25s}.schedule-tab.active,.schedule-tab:hover{background:var(--accent-red);border-color:var(--accent-red);color:#fff}
+    .schedule-card{background:var(--card-light);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:30px;min-height:388px;overflow:hidden;box-shadow:var(--shadow-card)}
+    .schedule-card-top{display:flex;justify-content:space-between;gap:20px;margin-bottom:24px;align-items:flex-start}.schedule-day{font-size:54px;color:var(--text-dark)}.schedule-type{display:inline-flex;align-items:center;gap:8px;background:rgba(255,45,0,.08);color:var(--accent-red);border:1px solid rgba(255,45,0,.18);padding:8px 14px;border-radius:999px;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:1px}
+    .slot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0}.slot{padding:18px 10px;background:var(--bg-soft);border:1px solid var(--border-light);border-radius:12px;text-align:center;transition:all .25s}.slot:hover{border-color:var(--accent-red);transform:translateY(-3px)}.slot strong{display:block;font-family:var(--font-display);font-size:25px;line-height:1;color:var(--text-dark)}.slot span{font-size:11px;color:var(--text-gray);font-weight:800;text-transform:uppercase;letter-spacing:1px}
+    .schedule-note{color:var(--text-gray);font-size:14px;line-height:1.8;margin-bottom:20px}.schedule-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}.schedule-meta div{background:var(--bg-soft);border:1px solid var(--border-light);padding:16px;border-radius:12px}.schedule-meta strong{display:block;font-family:var(--font-display);font-size:22px;line-height:1;color:var(--text-dark)}.schedule-meta span{font-size:12px;color:var(--text-gray)}
+
+    /* WHY IT WORKS */
+    .why-section{background:var(--bg-light)}
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.why-card{background:var(--card-light);border:1px solid var(--border-light);border-radius:14px;padding:28px;transition:all .3s;box-shadow:var(--shadow-card)}.why-card:hover{transform:translateY(-5px);border-color:rgba(255,45,0,.3);box-shadow:var(--shadow-soft)}.why-card i{font-size:26px;color:var(--accent-red);margin-bottom:18px}.why-card h3{font-size:25px;margin-bottom:10px;color:var(--text-dark)}.why-card p{font-size:14px;color:var(--text-gray);line-height:1.7;font-weight:400}
+
+    /* MEMBERSHIP */
+    .membership{background:var(--bg-soft)}
+    .membership-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+    .plan-card{background:var(--card-light);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:36px 30px;position:relative;transition:all var(--transition);display:flex;flex-direction:column;overflow:hidden;min-width:0;box-shadow:var(--shadow-card)}
+    .plan-card::after{content:"";position:absolute;inset:auto -40% -42% auto;width:240px;height:240px;border-radius:50%;background:rgba(255,45,0,.03);filter:blur(50px)}
+    .plan-card:hover{transform:translateY(-8px);border-color:rgba(255,45,0,.2);box-shadow:var(--shadow-soft)}
+    .plan-card.featured{border:2px solid var(--accent-red);background:var(--card-light)}
+    .plan-badge{position:absolute;top:18px;right:18px;background:var(--accent-red);color:#fff;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:1px;padding:6px 13px;border-radius:999px}
+    .plan-name{font-size:32px;margin-bottom:6px;color:var(--text-dark)}
+    .plan-price{font-family:var(--font-display);font-size:52px;color:var(--accent-red);line-height:1;margin-bottom:4px}
+    .plan-price span{font-size:15px;font-family:var(--font-body);color:var(--text-gray);font-weight:400}
+    .plan-duration{font-size:13px;color:var(--text-gray);margin-bottom:26px}
+    .plan-features{margin-bottom:30px;display:flex;flex-direction:column;gap:13px;flex:1}
+    .plan-features li{font-size:14px;color:var(--text-gray);display:flex;align-items:flex-start;gap:10px;font-weight:400}
+    .plan-features li i{color:var(--accent-red);font-size:13px;margin-top:4px;width:16px;text-align:center}
+    .plan-card .btn{width:100%;margin-top:auto}
+    .membership-note{font-size:13px;color:var(--text-gray);text-align:center;margin-top:28px}
+
+    /* TRAINERS */
+    .trainers{background:var(--bg-light)}
+    .trainers-carousel-wrapper{position:relative;overflow:hidden;cursor:grab;user-select:none}.trainers-carousel-wrapper:active{cursor:grabbing}.trainers-carousel{display:flex;gap:22px;will-change:transform}
+    .trainer-card{min-width:280px;max-width:315px;background:var(--card-light);border-radius:var(--radius-lg);border:1px solid var(--border-light);overflow:hidden;flex-shrink:0;transition:all var(--transition);box-shadow:var(--shadow-card)}.trainer-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-soft)}.trainer-photo-wrap{width:100%;height:330px;overflow:hidden;position:relative}.trainer-photo{width:100%;height:100%;object-fit:cover;filter:saturate(.95) contrast(1.02);transition:transform .65s ease}.trainer-card:hover .trainer-photo{transform:scale(1.05)}.trainer-info{padding:23px}.trainer-name{font-size:26px;margin-bottom:8px;color:var(--text-dark)}.trainer-specialty{display:inline-block;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:1px;padding:4px 10px;background:var(--accent-red);color:#fff;border-radius:999px;margin-bottom:12px}.trainer-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.trainer-meta span{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--text-gray);border:1px solid var(--border-light);padding:4px 8px;border-radius:999px}.trainer-bio{font-size:13px;color:var(--text-gray);line-height:1.65;margin-bottom:16px;font-weight:400}.trainer-actions{display:flex;gap:10px}.trainer-actions .btn{flex:1;padding:11px 12px;font-size:11px;min-height:40px}.carousel-hint{font-size:12px;color:var(--text-dim-light);text-transform:uppercase;letter-spacing:1px;margin-top:18px;text-align:center}
+
+    /* RESULTS */
+    .results-section{background:var(--bg-soft)}
+    .results-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:start}.ba-slider{position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;border-radius:var(--radius-lg);cursor:ew-resize;user-select:none;background:var(--bg-soft);border:1px solid var(--border-light)}.ba-slider img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;pointer-events:none}.ba-before{clip-path:inset(0 50% 0 0);z-index:2;filter:grayscale(.85) brightness(.7)}.ba-after{z-index:1}.ba-handle{position:absolute;top:0;bottom:0;left:50%;width:4px;background:var(--accent-red);z-index:3;transform:translateX(-50%);pointer-events:none;box-shadow:0 0 20px rgba(255,45,0,.6)}.ba-handle-knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;background:var(--accent-red);display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;box-shadow:0 5px 28px rgba(255,45,0,.52)}.ba-label{position:absolute;bottom:18px;font-family:var(--font-display);font-size:12px;text-transform:uppercase;letter-spacing:3px;padding:7px 15px;background:rgba(0,0,0,.74);color:#fff;border-radius:999px;z-index:4;pointer-events:none;backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.08)}.ba-label-before{left:18px}.ba-label-after{right:18px}.stories{display:grid;gap:16px}.story-card{background:var(--card-light);border:1px solid var(--border-light);border-radius:14px;padding:22px;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;box-shadow:var(--shadow-card)}.story-badge{width:48px;height:48px;border-radius:50%;background:rgba(255,45,0,.08);color:var(--accent-red);display:grid;place-items:center;font-family:var(--font-display);font-size:24px}.story-card h3{font-size:25px;margin-bottom:6px;color:var(--text-dark)}.story-card p{font-size:14px;color:var(--text-gray);line-height:1.65}.story-card strong{color:var(--text-dark)}
+
+    /* COMMUNITY */
+    .community{background:var(--bg-light)}
+    .community-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}.community-item{position:relative;overflow:hidden;border-radius:var(--radius-lg);min-height:230px;border:1px solid var(--border-light);background:var(--bg-soft);min-width:0}.community-item:nth-child(1){grid-column:span 5;min-height:420px}.community-item:nth-child(2){grid-column:span 4}.community-item:nth-child(3){grid-column:span 3}.community-item:nth-child(4){grid-column:span 3}.community-item:nth-child(5){grid-column:span 5}.community-item:nth-child(6){grid-column:span 4}.community-item img{width:100%;height:100%;object-fit:cover;filter:saturate(.95) contrast(1.02);transition:transform .7s ease}.community-item:hover img{transform:scale(1.06)}.community-item::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.5))}.community-caption{position:absolute;left:18px;right:18px;bottom:18px;z-index:2}.community-caption h3{font-size:25px;color:#fff}.community-caption p{font-size:12px;color:rgba(255,255,255,.75);font-weight:600;text-transform:uppercase;letter-spacing:1px}
+
+    /* TESTIMONIALS */
+    .testimonials-section{background:var(--bg-soft)}
+    .testimonials-wrapper{position:relative;max-width:880px;margin:0 auto;min-height:340px}.testimonial-card{position:absolute;top:0;left:0;width:100%;opacity:0;visibility:hidden;transition:all .5s ease;text-align:center;padding:24px}.testimonial-card.active{opacity:1;visibility:visible;position:relative}.testimonial-stars{color:#f5b400;font-size:18px;margin-bottom:20px;letter-spacing:3px}.testimonial-quote{font-size:21px;color:var(--text-dark);font-style:italic;line-height:1.7;margin-bottom:22px;font-weight:400;max-width:720px;margin-left:auto;margin-right:auto}.testimonial-avatar{width:64px;height:64px;border-radius:50%;object-fit:cover;margin:0 auto 12px;border:2px solid var(--accent-red)}.testimonial-name{font-family:var(--font-display);font-size:22px;letter-spacing:1px;color:var(--text-dark)}.testimonial-tag{font-size:12px;color:var(--accent-red);font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-top:4px}.testimonial-dots{display:flex;gap:10px;justify-content:center;margin-top:28px}.testimonial-dot{width:10px;height:10px;border-radius:50%;background:var(--border-light);cursor:pointer;transition:all .3s}.testimonial-dot.active{background:var(--accent-red);transform:scale(1.35)}
+
+    /* CONTACT */
+
+    /* OUTLETS */
+    .outlets-section{background:var(--bg-light)}
+    .outlet-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch;margin-top:36px;min-width:0}
+    .outlet-feature{background:var(--card-light);border:1px solid var(--border-light);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-soft);min-width:0}
+    .outlet-media{height:310px;position:relative;overflow:hidden;background:var(--bg-dark)}
+    .outlet-media img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.08)}
+    .outlet-badge{position:absolute;left:18px;top:18px;background:var(--accent-red);color:#fff;border-radius:999px;padding:8px 13px;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:1px}
+    .outlet-body{padding:30px}.outlet-body h3{font-size:42px;margin-bottom:10px;color:var(--text-dark)}.outlet-body p{font-size:15px;line-height:1.7;margin-bottom:18px;color:var(--text-gray)}
+    .outlet-data{display:grid;gap:11px;margin:20px 0}.outlet-data li{display:flex;gap:12px;align-items:flex-start;color:var(--text-dark);font-size:14px;line-height:1.55}.outlet-data i{color:var(--accent-red);width:20px;margin-top:3px}
+    .outlet-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+    .outlet-list{display:grid;gap:16px}.mini-outlet{background:var(--card-light);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow-card);position:relative;overflow:hidden;min-width:0}.mini-outlet::before{content:"";position:absolute;right:-35px;top:-35px;width:110px;height:110px;border-radius:50%;background:rgba(255,45,0,.04)}.mini-outlet h3{font-size:28px;margin-bottom:8px;color:var(--text-dark)}.mini-outlet p{font-size:14px;line-height:1.65;margin-bottom:16px;color:var(--text-gray)}.mini-outlet small{display:block;text-transform:uppercase;letter-spacing:1.2px;font-weight:800;color:var(--text-dim-light);margin-bottom:10px}.mini-outlet .btn{padding:11px 18px;font-size:12px}
+    .brand-proof{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}.proof-pill{background:var(--card-light);color:var(--text-dark);border-radius:14px;padding:18px;border:1px solid var(--border-light);box-shadow:var(--shadow-card)}.proof-pill strong{display:block;font-family:var(--font-display);font-size:26px;color:var(--text-dark)}.proof-pill span{font-size:12px;color:var(--text-gray);text-transform:uppercase;letter-spacing:1px}
+
+    /* CONTACT */
+    .contact-section{background:var(--bg-soft)}
+    .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:stretch}.contact-map{border-radius:var(--radius-lg);overflow:hidden;min-height:540px;border:1px solid var(--border-light)}.contact-map iframe{width:100%;height:100%;min-height:540px;border:0;filter:grayscale(.3) contrast(1.02)}.contact-info{background:var(--card-light);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:36px;box-shadow:var(--shadow-card)}.contact-info h2{font-size:48px;margin-bottom:24px;color:var(--text-dark)}.contact-detail{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px;color:var(--text-gray);font-size:15px;font-weight:400}.contact-detail i{color:var(--accent-red);font-size:18px;margin-top:3px;width:22px;text-align:center}.contact-hours{margin:24px 0}.contact-hours h4{font-family:var(--font-display);font-size:20px;letter-spacing:2px;color:var(--text-dark);margin-bottom:8px}.contact-hours p{font-size:14px;color:var(--text-gray);font-weight:400;line-height:1.85}.contact-buttons{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:28px}.contact-form{display:grid;gap:14px}.contact-form input,.contact-form select{background:var(--bg-soft);border:1px solid var(--border-light);padding:15px 16px;border-radius:10px;color:var(--text-dark);font-size:15px;transition:all .3s}.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{border-color:var(--accent-red);box-shadow:0 0 0 3px rgba(255,45,0,.08);outline:none}.contact-form input::placeholder{color:var(--text-dim-light)}.contact-form select{color:var(--text-gray);cursor:pointer}.contact-form option{background:var(--card-light);color:var(--text-dark)}
+
+    /* FOOTER */
+    .footer{background:var(--bg-dark);border-top:2px solid var(--accent-red);padding:74px 24px 32px}.footer-grid{display:grid;grid-template-columns:1.5fr .9fr .9fr 1.1fr;gap:44px;margin-bottom:44px}.footer-logo{font-family:var(--font-display);font-size:30px;color:var(--accent-red);letter-spacing:2px;margin-bottom:12px}.footer-logo span{color:var(--text-light)}.footer-tagline{font-size:15px;color:rgba(255,255,255,.55);margin-bottom:16px;font-weight:400;line-height:1.6}.footer-socials{display:flex;gap:12px}.footer-socials a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:16px;transition:all .3s}.footer-socials a:hover{background:var(--accent-red);color:#fff;transform:translateY(-2px)}.footer-col h4{font-family:var(--font-display);font-size:18px;letter-spacing:2px;color:var(--text-light);margin-bottom:18px}.footer-col ul{display:flex;flex-direction:column;gap:10px}.footer-col ul a{font-size:14px;color:rgba(255,255,255,.55);transition:color .3s;font-weight:400}.footer-col ul a:hover{color:var(--accent-red)}.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}.footer-bottom p{font-size:13px;color:rgba(255,255,255,.4);font-weight:400}
+
+    /* FLOATING ACTIONS */
+    .float-wa{position:fixed;bottom:32px;right:32px;z-index:998;width:56px;height:56px;border-radius:50%;background:var(--accent-red);display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;box-shadow:0 4px 24px rgba(255,45,0,.4);transition:transform .3s}.float-wa:hover{transform:scale(1.1)}.float-wa::before,.float-wa::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--accent-red);animation:wa-pulse 2s ease-out infinite}.float-wa::after{animation-delay:.5s}@keyframes wa-pulse{0%{transform:scale(1);opacity:1}100%{transform:scale(1.6);opacity:0}}.float-wa-tooltip{position:absolute;right:68px;top:50%;transform:translateY(-50%);background:var(--text-dark);color:#fff;padding:8px 14px;border-radius:8px;font-size:13px;white-space:nowrap;opacity:0;visibility:hidden;transition:all .3s;pointer-events:none}.float-wa:hover .float-wa-tooltip{opacity:1;visibility:visible}
+    .scroll-top{position:fixed;bottom:32px;left:32px;z-index:998;width:44px;height:44px;border-radius:50%;background:var(--card-light);border:1px solid var(--border-light);display:flex;align-items:center;justify-content:center;color:var(--text-dark);font-size:18px;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(20px);transition:all .3s ease;box-shadow:var(--shadow-card)}.scroll-top.visible{opacity:1;visibility:visible;transform:translateY(0)}.scroll-top:hover{background:var(--accent-red);border-color:var(--accent-red);color:#fff}
+    .mobile-sticky-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:990;background:rgba(255,255,255,.95);border-top:1px solid var(--border-light);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:10px 12px;grid-template-columns:1fr 1fr;gap:10px;box-shadow:0 -4px 20px rgba(0,0,0,.06)}.mobile-sticky-cta .btn{flex:1;min-height:46px;padding:12px 10px;font-size:11px}
+
+    /* REVEAL */
+    [data-animate]{opacity:0;transform:translateY(26px);transition:opacity .75s ease,transform .75s var(--ease)}[data-animate].visible{opacity:1;transform:translateY(0)}
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .hero-video-desktop{display:none}
+      .hero-video-mobile{display:block}
+      .hero-video{object-position:center center}
+      .hero-overlay{background:linear-gradient(180deg,rgba(0,0,0,.65),rgba(0,0,0,.82)),linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.35))}
+      .hero-headline{font-size:clamp(54px,16vw,84px);line-height:.9}
+      section{padding:72px 20px}
+      .hero{padding:110px 0 50px;align-items:flex-end}
+      .hero-inner{width:min(100% - 28px,520px);gap:22px}
+      .hero-content{max-width:none;text-align:center}
+      .hero-eyebrow{font-size:10px;letter-spacing:5px;line-height:1.8;margin-bottom:16px}
+      .hero-headline{margin-bottom:22px}
+      .hero-subtext{font-size:15px;max-width:330px;margin:0 auto 24px;line-height:1.65}
+      .hero-buttons{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:0}
+      .hero-buttons .btn{width:100%;min-height:54px;padding:0 20px;justify-content:center}
+      .hero-trust{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .hero-trust span{min-height:48px;font-size:10px;letter-spacing:1.6px;padding:10px 8px;border-bottom:1px solid rgba(255,255,255,.1)}
+      .hero-trust span:nth-child(2n){border-right:0}
+      .hero-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 0}
+      .hero-stat{padding:0 10px}
+      .hero-stat:nth-child(2n){border-right:0}
+      .hero-stat-number{font-size:34px}
+      .hero-stat-label{font-size:10px}
+      .hero-scroll-indicator{display:none}
+    }
+    @media(min-width:769px){
+      .hero-video-desktop{display:block}
+      .hero-video-mobile{display:none}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .hero-video{display:none!important}
+      .hero{background-image:linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.78)),url("assets/images/hero poster.jpeg");background-size:cover;background-position:center}
+      *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+      .marquee-track{animation:none}
+    }
+    @media(max-width:1180px){.nav-links{gap:20px}.nav-links a{font-size:12px}.schedule-wrap,.results-grid{grid-template-columns:1fr}.schedule-panel{position:relative;top:0}.programs-grid,.why-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:1100px){.nav-links,.nav-right .desktop-only{display:none}.nav-hamburger{display:flex}}
+    @media(max-width:1024px){section{padding:88px 20px}.hero{min-height:100svh}.hero-inner{width:min(100% - 40px,var(--max))}.hero-content{max-width:640px}.trial-card,.about-grid,.contact-grid,.outlet-grid{grid-template-columns:1fr}.trial-steps{grid-template-columns:repeat(3,1fr)}.membership-grid{grid-template-columns:1fr;max-width:560px;margin:0 auto}.about-images{height:390px}.about-img{width:230px;height:295px}.about-img:nth-child(2){left:120px}.about-img:nth-child(3){left:54px;top:110px}.community-item:nth-child(n){grid-column:span 6;min-height:260px}.community-item:nth-child(1){min-height:360px}}
+    @media(max-width:860px){.nav{padding:14px 18px}.nav.scrolled{padding:10px 18px}.hero{padding:100px 0 50px}.hero-inner{width:min(100% - 32px,520px);gap:22px}.hero-content{max-width:none;text-align:center}.hero-subtext{margin-left:auto;margin-right:auto}.hero-buttons{justify-content:center}.hero-trust{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-trust span{border-bottom:1px solid rgba(255,255,255,.1)}.hero-trust span:nth-child(2n){border-right:0}.hero-trust span:last-child{border-bottom:0}.hero-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 0}.hero-stat{padding:0 12px}.hero-stat:nth-child(2n){border-right:0}.hero-stat-number{font-size:34px}.hero-stat-label{font-size:10px}.hero-scroll-indicator{display:none}.trial-steps,.programs-grid,.why-grid,.brand-proof{grid-template-columns:1fr}.programs-head{display:block}.programs-head .section-subtitle{margin-bottom:28px}.schedule-tabs{grid-template-columns:repeat(4,1fr)}.slot-grid,.schedule-meta{grid-template-columns:repeat(2,1fr)}.float-wa,.scroll-top{display:none}.mobile-sticky-cta{display:grid}body{padding-bottom:76px}.trainers-carousel-wrapper{overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px}.trainers-carousel{transform:none!important}.trainer-card{scroll-snap-align:start}.footer-bottom{padding-bottom:20px}}
+    @media(max-width:640px){section{padding:64px 16px}.nav-logo{font-size:24px}.hero{padding:110px 0 92px;min-height:100svh;align-items:flex-end}.hero-inner{width:min(100% - 28px,520px);gap:20px}.hero-trust{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-trust span{font-size:10px;min-height:44px;padding:10px 6px;letter-spacing:1.4px}.hero-trust span:nth-child(2n){border-right:0}.hero-trust span:nth-child(5){border-bottom:0}.hero-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 0}.hero-stat{padding:0 8px}.hero-stat:nth-child(2n){border-right:0}.hero-stat-number{font-size:32px}.hero-stat-label{font-size:10px}.hero-headline{font-size:clamp(48px,15vw,72px)}.hero-eyebrow{font-size:10px;letter-spacing:5px}.hero-subtext{font-size:15px}.hero-buttons .btn{width:100%;justify-content:center}.marquee-text{font-size:30px}.trial-card{padding:26px 18px}.trial-step{min-height:auto}.section-title{font-size:clamp(38px,13vw,56px)}.section-subtitle{font-size:15px;margin-bottom:34px}.about-images{height:270px;margin-top:10px}.about-img{width:150px;height:205px}.about-img:nth-child(2){left:84px;top:42px}.about-img:nth-child(3){left:32px;top:82px}.program-media{height:170px}.program-card{min-height:auto}.schedule-tabs{grid-template-columns:repeat(2,1fr)}.schedule-card{padding:22px 16px}.schedule-card-top{display:block}.schedule-day{font-size:40px;margin-bottom:10px}.slot-grid,.schedule-meta{grid-template-columns:1fr}.plan-card{padding:30px 22px}.trainer-card{min-width:282px;max-width:282px}.trainer-photo-wrap{height:290px}.results-grid{gap:22px}.story-card{grid-template-columns:1fr}.community-grid{grid-template-columns:1fr}.community-item:nth-child(n){grid-column:auto;min-height:260px}.testimonials-wrapper{min-height:420px}.testimonial-quote{font-size:17px}.contact-info{padding:26px 18px}.contact-map,.contact-map iframe{min-height:360px}.footer-grid{grid-template-columns:1fr}.outlet-body h3{font-size:34px}.outlet-media{height:240px}.outlet-actions{display:grid}.outlet-actions .btn{justify-content:center}.mobile-menu a{font-size:30px}}
+    @media(max-width:430px){.hero-features,.hero-trust{display:none}.hero{padding:110px 0 84px}.hero-headline{font-size:clamp(46px,15vw,68px)}.hero-subtext{font-size:14.5px}.hero-stats{margin-top:0;gap:16px 0}}
+    @media(max-width:390px){.hero-headline{font-size:46px}.hero-stats{grid-template-columns:1fr}.hero-stat{border-right:0;padding:0}.hero{padding:110px 0 90px}.btn{font-size:11px}.mobile-sticky-cta .btn{font-size:10px}.trainer-card{min-width:260px;max-width:260px}}
+    @media(min-width:1200px){.hero-content{margin-left:48px}}
+  </style>
+</head>
+<body class="loading">
+  <!-- PRELOADER -->
+  <div id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <div class="preloader-barbell"></div>
+      <div class="preloader-logo">PERFO<span>MITZ</span></div>
+      <p class="preloader-tagline">Fitness That Performs.</p>
+      <div class="preloader-sparks"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo" aria-label="PERFOMITZ Home">PERFO<span>MITZ</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#home" class="active">Home</a>
+        <a href="#programs">Programs</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#membership">Membership</a>
+        <a href="#trainers">Trainers</a>
+        <a href="#results">Results</a>
+        <a href="#outlets">Outlets</a>
+        <a href="#enquiry">Enquire</a>
+      </div>
+      <div class="nav-right">
+        <a href="#enquiry" class="btn btn-lime btn-sm desktop-only" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Start Free Trial</a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul>
+      <li><a href="#home" data-nav>Home</a></li>
+      <li><a href="#programs" data-nav>Programs</a></li>
+      <li><a href="#schedule" data-nav>Schedule</a></li>
+      <li><a href="#membership" data-nav>Membership</a></li>
+      <li><a href="#trainers" data-nav>Trainers</a></li>
+      <li><a href="#results" data-nav>Results</a></li>
+      <li><a href="#outlets" data-nav>Outlets</a></li>
+      <li><a href="#enquiry" data-nav>Enquire</a></li>
+      <li><a href="#enquiry" class="btn btn-lime" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Start Free Trial</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <!-- Desktop Hero Video -->
+    <video class="hero-video hero-video-desktop" autoplay muted loop playsinline preload="auto" poster="assets/images/hero poster.jpeg">
+      <source src="assets/videos/desktop.mp4" type="video/mp4">
+    </video>
+    <!-- Mobile Hero Video -->
+    <video class="hero-video hero-video-mobile" autoplay muted loop playsinline preload="auto" poster="assets/images/hero poster.jpeg">
+      <source src="assets/videos/mobile.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-vignette"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+      <span class="hero-eyebrow" id="heroEyebrow">Kakkattil, Kozhikode • Multi-Outlet Fitness Club</span>
+      <h1 class="hero-headline" aria-label="Train smarter. Get stronger.">
+        <span class="word">TRAIN</span>
+        <span class="word" style="margin-left:.12em">SMARTER.</span><br />
+        <span class="word">GET</span>
+        <span class="word word-red">STRONGER.</span>
+      </h1>
+      <p class="hero-subtext" id="heroSubtext">Full-service fitness centre in Kakkattil offering strength training, cardio workouts, HIIT, CrossFit-style sessions, personal training and nutrition guidance.</p>
+      <div class="hero-buttons" id="heroBtns">
+        <a href="#enquiry" class="btn btn-primary" target="_blank" rel="noopener">Start Free Trial <i class="fas fa-arrow-right"></i></a>
+        <a href="#enquiry" class="btn btn-outline" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+      </div>
+      </div>
+    <div class="hero-trust" aria-label="Training options">
+      <span>AC Rooms</span><span>Certified Trainers</span><span>Imported Machines</span><span>Locker + Shower</span><span>Personal Training</span>
+    </div>
+    <div class="hero-stats" aria-label="Editable gym highlights">
+      <!-- Editable placeholders: replace with verified real numbers before client delivery. -->
+      <div class="hero-stat"><div class="hero-stat-number" data-count="2017">0</div><div class="hero-stat-label">Established</div></div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat"><div class="hero-stat-number">4.7★</div><div class="hero-stat-label">JD Rating</div></div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat"><div class="hero-stat-number">245</div><div class="hero-stat-label">Ratings</div></div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat"><div class="hero-stat-number">6AM</div><div class="hero-stat-label">Open Daily</div></div>
+    </div>
+    </div>
+    <div class="hero-scroll-indicator"><span>Scroll</span><i class="fas fa-chevron-down"></i></div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-section" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-text"><span>STRENGTH</span><span class="marquee-dot"></span><span>ENDURANCE</span><span class="marquee-dot"></span><span>DISCIPLINE</span><span class="marquee-dot"></span><span>POWER</span><span class="marquee-dot"></span><span>RESULTS</span><span class="marquee-dot"></span><span>TRANSFORMATION</span><span class="marquee-dot"></span><span>CONSISTENCY</span><span class="marquee-dot"></span><span>ELITE</span><span class="marquee-dot"></span></div>
+      <div class="marquee-text"><span>STRENGTH</span><span class="marquee-dot"></span><span>ENDURANCE</span><span class="marquee-dot"></span><span>DISCIPLINE</span><span class="marquee-dot"></span><span>POWER</span><span class="marquee-dot"></span><span>RESULTS</span><span class="marquee-dot"></span><span>TRANSFORMATION</span><span class="marquee-dot"></span><span>CONSISTENCY</span><span class="marquee-dot"></span><span>ELITE</span><span class="marquee-dot"></span></div>
+    </div>
+  </div>
+
+  <!-- FREE TRIAL -->
+  <section class="trial-section" id="trial">
+    <div class="container">
+      <div class="trial-card" data-animate>
+        <div class="trial-copy">
+          <span class="section-kicker">Start Here</span>
+          <h2>New here? Start with a <em style="color:var(--accent-red);font-style:normal">free trial</em> session.</h2>
+          <p>Message the branch, choose your goal, and get available timings for a trial or membership enquiry before visiting.</p>
+          <a href="#enquiry" class="btn btn-lime" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Book Free Trial on WhatsApp</a>
+        </div>
+        <div class="trial-steps">
+          <article class="trial-step"><div><div class="step-number">01</div><h3>Choose Your Goal</h3></div><p>Fat loss, strength, stamina, confidence, or complete transformation.</p></article>
+          <article class="trial-step"><div><div class="step-number">02</div><h3>Book Your Trial</h3></div><p>Pick a comfortable timing and visit the gym for a guided first session.</p></article>
+          <article class="trial-step"><div><div class="step-number">03</div><h3>Meet Your Coach</h3></div><p>Get form guidance, program advice, and the right membership suggestion.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text" data-animate>
+          <span class="section-kicker">Our Philosophy</span>
+          <h2>We don't build bodies.<br><em>We build discipline.</em></h2>
+          <p>At PERFOMITZ, training is built around performance, consistency and proper coaching. The gym supports strength training, cardio workouts, HIIT, CrossFit-style sessions, weight-loss programs and personal training.</p>
+          <p>Located near Grand Textiles in Kakkattil, the facility includes AC rooms, imported machines, locker facilities, restrooms and showers, with guidance for beginners and serious fitness members.</p>
+          <a href="#programs" class="btn btn-ghost">Explore Programs <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="about-images" data-animate>
+          <img class="about-img" src="assets/images/facility-1.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=700&q=82';" alt="PERFOMITZ fitness centre training floor" loading="lazy" />
+          <img class="about-img" src="assets/images/group-class.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=700&q=82';" alt="Coach led gym session" loading="lazy" />
+          <img class="about-img" src="assets/images/facility-2.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=700&q=82';" alt="Premium gym equipment" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section class="programs" id="programs">
+    <div class="container">
+      <div class="programs-head">
+        <div data-animate>
+          <span class="section-kicker">Our Arsenal</span>
+          <h2 class="section-title">Programs & <em>Classes</em></h2>
+        </div>
+        <p class="section-subtitle" data-animate>Elite training disciplines designed to match your current level and push you toward your next goal.</p>
+      </div>
+      <div class="programs-grid">
+        <article class="program-card" data-animate>
+          <div class="program-media"><img src="assets/images/class-strength.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&q=82';" alt="Strength training class" loading="lazy" /></div>
+          <div class="program-content"><div class="program-top"><div class="program-icon"><i class="fas fa-dumbbell"></i></div><span class="program-duration">60 min</span></div><h3 class="program-name">Strength Training</h3><p class="program-desc">Progressive weight training using free weights, machines, and form-focused coaching.</p><div class="program-tags"><span class="program-tag">All Levels</span><span class="program-tag">Muscle Gain</span><span class="program-tag">Form Correction</span></div><a class="btn btn-outline" href="#enquiry" target="_blank" rel="noopener">Ask About This Program</a></div>
+        </article>
+        <article class="program-card" data-animate>
+          <div class="program-media"><img src="assets/images/class-hiit.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1518611012118-4b2f7b62a2d3?w=800&q=82';" alt="HIIT cardio training" loading="lazy" /></div>
+          <div class="program-content"><div class="program-top"><div class="program-icon"><i class="fas fa-heart-pulse"></i></div><span class="program-duration">45 min</span></div><h3 class="program-name">HIIT Cardio</h3><p class="program-desc">High-intensity intervals for fat loss, stamina, and powerful conditioning.</p><div class="program-tags"><span class="program-tag">Intermediate</span><span class="program-tag">Fat Loss</span><span class="program-tag">Energy</span></div><a class="btn btn-outline" href="#enquiry" target="_blank" rel="noopener">Ask About This Program</a></div>
+        </article>
+        <article class="program-card" data-animate>
+          <div class="program-media"><img src="assets/images/class-functional.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534367507873-db4d5e7b2c6b?w=800&q=82';" alt="Functional training" loading="lazy" /></div>
+          <div class="program-content"><div class="program-top"><div class="program-icon"><i class="fas fa-bolt"></i></div><span class="program-duration">50 min</span></div><h3 class="program-name">Functional Training</h3><p class="program-desc">Athletic movement patterns combining strength, mobility, speed, and endurance.</p><div class="program-tags"><span class="program-tag">Full Body</span><span class="program-tag">Athletic</span><span class="program-tag">Core</span></div><a class="btn btn-outline" href="#enquiry" target="_blank" rel="noopener">Ask About This Program</a></div>
+        </article>
+        <article class="program-card" data-animate>
+          <div class="program-media"><img src="assets/images/class-recovery.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=82';" alt="Yoga and recovery" loading="lazy" /></div>
+          <div class="program-content"><div class="program-top"><div class="program-icon"><i class="fas fa-spa"></i></div><span class="program-duration">50 min</span></div><h3 class="program-name">Yoga & Recovery</h3><p class="program-desc">Mobility, flexibility, breathing, and recovery sessions to support hard training.</p><div class="program-tags"><span class="program-tag">All Levels</span><span class="program-tag">Mobility</span><span class="program-tag">Recovery</span></div><a class="btn btn-outline" href="#enquiry" target="_blank" rel="noopener">Ask About This Program</a></div>
+        </article>
+        <article class="program-card" data-animate>
+          <div class="program-media"><img src="assets/images/class-personal-training.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=82';" alt="Personal training" loading="lazy" /></div>
+          <div class="program-content"><div class="program-top"><div class="program-icon"><i class="fas fa-user-gear"></i></div><span class="program-duration">Flexible</span></div><h3 class="program-name">Personal Training</h3><p class="program-desc">One-on-one coaching with custom programming, accountability, and technique correction.</p><div class="program-tags"><span class="program-tag">1-on-1</span><span class="program-tag">Custom Plan</span><span class="program-tag">Fast Progress</span></div><a class="btn btn-outline" href="#enquiry" target="_blank" rel="noopener">Ask About This Program</a></div>
+        </article>
+        <article class="program-card" data-animate>
+          <div class="program-media"><img src="assets/images/nutrition.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=82';" alt="Nutrition coaching" loading="lazy" /></div>
+          <div class="program-content"><div class="program-top"><div class="program-icon"><i class="fas fa-apple-whole"></i></div><span class="program-duration">Ongoing</span></div><h3 class="program-name">Nutrition Coaching</h3><p class="program-desc">Simple, realistic nutrition guidance that supports fat loss, muscle gain, and performance.</p><div class="program-tags"><span class="program-tag">Meal Guidance</span><span class="program-tag">Goal Based</span><span class="program-tag">Support</span></div><a class="btn btn-outline" href="#enquiry" target="_blank" rel="noopener">Ask About This Program</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section class="schedule-section" id="schedule">
+    <div class="container">
+      <div class="schedule-wrap">
+        <aside class="schedule-panel" data-animate>
+          <span class="section-kicker">Weekly Flow</span>
+          <h3>Book a class that matches your goal.</h3>
+          <p>Choose a session, message us on WhatsApp, and we’ll confirm today’s available slots. Schedule can be customized based on real gym timings.</p>
+          <a class="btn btn-primary" href="#enquiry" target="_blank" rel="noopener">Book A Class <i class="fas fa-arrow-right"></i></a>
+        </aside>
+        <div data-animate>
+          <div class="schedule-tabs" id="scheduleTabs" aria-label="Weekly schedule tabs">
+            <button class="schedule-tab active" data-day="monday">Mon</button><button class="schedule-tab" data-day="tuesday">Tue</button><button class="schedule-tab" data-day="wednesday">Wed</button><button class="schedule-tab" data-day="thursday">Thu</button><button class="schedule-tab" data-day="friday">Fri</button><button class="schedule-tab" data-day="saturday">Sat</button><button class="schedule-tab" data-day="sunday">Sun</button>
+          </div>
+          <article class="schedule-card" id="scheduleCard">
+            <div class="schedule-card-top"><div><p class="schedule-type" id="scheduleType"><i class="fas fa-dumbbell"></i> Strength</p><h2 class="schedule-day" id="scheduleDay">Monday</h2></div><a class="btn btn-outline" id="scheduleWhatsapp" href="#enquiry" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Book Slot</a></div>
+            <p class="schedule-note" id="scheduleNote">A coach-led strength day focused on compound lifts, progressive overload, and clean form.</p>
+            <div class="slot-grid"><div class="slot"><strong>6:00</strong><span>AM</span></div><div class="slot"><strong>7:00</strong><span>AM</span></div><div class="slot"><strong>6:00</strong><span>PM</span></div><div class="slot"><strong>7:30</strong><span>PM</span></div></div>
+            <div class="schedule-meta"><div><strong>Coach-led</strong><span>Guided session</span></div><div><strong>45-60 min</strong><span>Training time</span></div><div><strong>All levels</strong><span>Scalable workout</span></div></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY IT WORKS -->
+  <section class="why-section" id="why">
+    <div class="container">
+      <div class="center" data-animate><span class="section-kicker">The System</span><h2 class="section-title">Why This Training <em>Works</em></h2><p class="section-subtitle">A gym website should not only show equipment. It should show the method, support, and reason people trust the facility.</p></div>
+      <div class="why-grid">
+        <article class="why-card" data-animate><i class="fas fa-user-check"></i><h3>Coach-led workouts</h3><p>Members don’t train blindly. Coaches guide form, intensity, and progression.</p></article>
+        <article class="why-card" data-animate><i class="fas fa-chart-line"></i><h3>Progressive programming</h3><p>Workouts are structured to build strength, stamina, and consistency over time.</p></article>
+        <article class="why-card" data-animate><i class="fas fa-fire-flame-curved"></i><h3>Strength + cardio balance</h3><p>Train muscle, conditioning, mobility, and recovery without random routines.</p></article>
+        <article class="why-card" data-animate><i class="fas fa-bullseye"></i><h3>Goal-based tracking</h3><p>Start with your goal and choose a training path that matches your current level.</p></article>
+        <article class="why-card" data-animate><i class="fas fa-person-circle-check"></i><h3>Form correction</h3><p>Better movement reduces injury risk and helps members train with confidence.</p></article>
+        <article class="why-card" data-animate><i class="fas fa-people-group"></i><h3>Community support</h3><p>A strong local training culture keeps members accountable and motivated.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMBERSHIP -->
+  <section class="membership" id="membership">
+    <div class="container">
+      <div class="center" data-animate><span class="section-kicker">Join The Temple</span><h2 class="section-title">Membership <em>Plans</em></h2><p class="section-subtitle">Choose your path. Every plan can be customized based on the gym’s current package and offer structure.</p></div>
+      <div class="membership-grid">
+        <article class="plan-card" data-animate><h3 class="plan-name">Starter</h3><div class="plan-price">₹999<span>/month</span></div><p class="plan-duration">1 Month Access</p><ul class="plan-features"><li><i class="fas fa-check"></i>Gym floor access</li><li><i class="fas fa-check"></i>Basic assessment</li><li><i class="fas fa-check"></i>Locker room access</li><li><i class="fas fa-check"></i>Beginner friendly guidance</li><li><i class="fas fa-check"></i>WhatsApp support</li></ul><a href="#enquiry" class="btn btn-outline" target="_blank" rel="noopener">Ask Starter Plan</a></article>
+        <article class="plan-card featured" data-animate><span class="plan-badge">Most Popular</span><h3 class="plan-name">Pro</h3><div class="plan-price">₹1,799<span>/month</span></div><p class="plan-duration">3 Month Access</p><ul class="plan-features"><li><i class="fas fa-check"></i>All Starter features</li><li><i class="fas fa-check"></i>Group classes included</li><li><i class="fas fa-check"></i>2 PT sessions / month</li><li><i class="fas fa-check"></i>Diet consultation</li><li><i class="fas fa-check"></i>Body composition scan</li></ul><a href="#enquiry" class="btn btn-primary" target="_blank" rel="noopener">Ask Pro Plan</a></article>
+        <article class="plan-card" data-animate><h3 class="plan-name">Elite</h3><div class="plan-price">₹2,999<span>/month</span></div><p class="plan-duration">6 Month Access</p><ul class="plan-features"><li><i class="fas fa-check"></i>All Pro features</li><li><i class="fas fa-check"></i>Dedicated trainer support</li><li><i class="fas fa-check"></i>Custom meal guidance</li><li><i class="fas fa-check"></i>Priority booking</li><li><i class="fas fa-check"></i>Transformation tracking</li></ul><a href="#enquiry" class="btn btn-outline" target="_blank" rel="noopener">Ask Elite Plan</a></article>
+      </div>
+      <p class="membership-note" data-animate>Note: Prices and offers can be customized based on current gym packages.</p>
+    </div>
+  </section>
+
+  <!-- TRAINERS -->
+  <section class="trainers" id="trainers">
+    <div class="container">
+      <div class="center" data-animate><span class="section-kicker">Your Guides</span><h2 class="section-title">Meet The <em>Experts</em></h2><p class="section-subtitle">Trainer cards are built as editable placeholders. Replace names, photos, certifications, and experience with real data.</p></div>
+      <div class="trainers-carousel-wrapper" id="trainersWrapper" data-animate>
+        <div class="trainers-carousel" id="trainersCarousel">
+          <article class="trainer-card"><div class="trainer-photo-wrap"><img class="trainer-photo" src="assets/images/trainer-1.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=600&q=82';" alt="Trainer Arjun Menon" loading="lazy" /></div><div class="trainer-info"><h3 class="trainer-name">Arjun Menon</h3><span class="trainer-specialty">Strength & Conditioning</span><div class="trainer-meta"><span>10+ Years</span><span>CSCS Placeholder</span></div><p class="trainer-bio">Specializes in powerlifting, strength progression, and safe compound lift technique.</p><div class="trainer-actions"><a class="btn btn-outline" href="#enquiry" target="_blank" rel="noopener">Train With Coach</a></div></div></article>
+          <article class="trainer-card"><div class="trainer-photo-wrap"><img class="trainer-photo" src="assets/images/trainer-2.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=600&q=82';" alt="Trainer Priya Nair" loading="lazy" /></div><div class="trainer-info"><h3 class="trainer-name">Priya Nair</h3><span class="trainer-specialty">Yoga & Mobility</span><div class="trainer-meta"><span>RYT Placeholder</span><span>Recovery</span></div><p class="trainer-bio">Guides mobility, flexibility, recovery, breathing, and beginner-friendly movement.</p><div class="trainer-actions"><a class="btn btn-outline" href="#enquiry" target="_blank" rel="noopener">Train With Coach</a></div></div></article>
+          <article class="trainer-card"><div class="trainer-photo-wrap"><img class="trainer-photo" src="assets/images/trainer-3.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=82';" alt="Trainer Rahul Krishnan" loading="lazy" /></div><div class="trainer-info"><h3 class="trainer-name">Rahul Krishnan</h3><span class="trainer-specialty">HIIT & Functional</span><div class="trainer-meta"><span>CrossFit L2 Placeholder</span><span>Conditioning</span></div><p class="trainer-bio">Builds high-energy functional sessions focused on endurance, fat loss, and strength.</p><div class="trainer-actions"><a class="btn btn-outline" href="#enquiry" target="_blank" rel="noopener">Train With Coach</a></div></div></article>
+          <article class="trainer-card"><div class="trainer-photo-wrap"><img class="trainer-photo" src="assets/images/trainer-4.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1550345332-09e3ac987658?w=600&q=82';" alt="Trainer Meera Das" loading="lazy" /></div><div class="trainer-info"><h3 class="trainer-name">Meera Das</h3><span class="trainer-specialty">Nutrition & Wellness</span><div class="trainer-meta"><span>Nutrition Placeholder</span><span>Meal Guidance</span></div><p class="trainer-bio">Creates simple, sustainable nutrition guidance for real-life consistency.</p><div class="trainer-actions"><a class="btn btn-outline" href="#enquiry" target="_blank" rel="noopener">Ask Nutrition</a></div></div></article>
+        </div>
+      </div>
+      <p class="carousel-hint">Drag sideways to explore coaches</p>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="results-section" id="results">
+    <div class="container">
+      <div class="center" data-animate><span class="section-kicker">Proof In The Process</span><h2 class="section-title">Real Progress Starts With <em>Consistency</em></h2><p class="section-subtitle">Use real member photos and stories here. Until then, these are editable placeholders for client demo purposes.</p></div>
+      <div class="results-grid">
+        <div class="ba-slider" id="baSlider" data-animate>
+          <img class="ba-before" id="baBefore" src="assets/images/result-before.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1550345332-09e3ac987658?w=900&q=82';" alt="Before placeholder" draggable="false" />
+          <img class="ba-after" src="assets/images/result-after.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=900&q=82';" alt="After placeholder" draggable="false" />
+          <div class="ba-handle" id="baHandle"><div class="ba-handle-knob"><i class="fas fa-arrows-left-right"></i></div></div>
+          <span class="ba-label ba-label-before">Before</span><span class="ba-label ba-label-after">After</span>
+        </div>
+        <div class="stories" data-animate>
+          <article class="story-card"><div class="story-badge">01</div><div><h3>[Member Name]</h3><p><strong>Goal:</strong> Fat loss & stamina<br><strong>Duration:</strong> [12 Weeks]<br><strong>Result:</strong> [Replace with verified result]</p></div></article>
+          <article class="story-card"><div class="story-badge">02</div><div><h3>[Member Name]</h3><p><strong>Goal:</strong> Strength gain<br><strong>Duration:</strong> [6 Months]<br><strong>Result:</strong> [Replace with verified result]</p></div></article>
+          <article class="story-card"><div class="story-badge">03</div><div><h3>[Member Name]</h3><p><strong>Goal:</strong> Beginner confidence<br><strong>Duration:</strong> [8 Weeks]<br><strong>Result:</strong> [Replace with verified result]</p></div></article>
+          <a href="#enquiry" class="btn btn-primary" target="_blank" rel="noopener">Start Your Transformation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section class="community" id="community">
+    <div class="container">
+      <div class="center" data-animate><span class="section-kicker">Inside The Temple</span><h2 class="section-title">The Gym Experience <em>Matters</em></h2><p class="section-subtitle">Replace these preview images with real gym photos: training floor, equipment, group workouts, coach interaction, and facility ambience.</p></div>
+      <div class="community-grid" data-animate>
+        <article class="community-item"><img src="assets/images/community-1.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=900&q=82';" alt="Training floor" loading="lazy" /><div class="community-caption"><h3>Training Floor</h3><p>Strength zone</p></div></article>
+        <article class="community-item"><img src="assets/images/community-2.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=900&q=82';" alt="Group class" loading="lazy" /><div class="community-caption"><h3>Group Energy</h3><p>Coach-led classes</p></div></article>
+        <article class="community-item"><img src="assets/images/facility-1.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=900&q=82';" alt="Gym equipment" loading="lazy" /><div class="community-caption"><h3>Equipment</h3><p>Built for progress</p></div></article>
+        <article class="community-item"><img src="assets/images/facility-2.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=900&q=82';" alt="Personal coaching" loading="lazy" /><div class="community-caption"><h3>Personal Coaching</h3><p>Form support</p></div></article>
+        <article class="community-item"><img src="assets/images/training-floor.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=900&q=82';" alt="Workout community" loading="lazy" /><div class="community-caption"><h3>Community</h3><p>Train together</p></div></article>
+        <article class="community-item"><img src="assets/images/group-class.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=900&q=82';" alt="Fitness class" loading="lazy" /><div class="community-caption"><h3>Daily Classes</h3><p>Morning & evening</p></div></article>
+      </div>
+      <div class="center" style="margin-top:34px" data-animate><a class="btn btn-outline" href="https://www.instagram.com/perfomitz_fitness_club/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Follow Us on Instagram</a></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="center" data-animate><span class="section-kicker">Member Stories</span><h2 class="section-title">What Our <em>Members Say</em></h2></div>
+      <div class="testimonials-wrapper" id="testimonialsWrapper" data-animate>
+        <article class="testimonial-card active"><div class="testimonial-stars">★★★★★</div><p class="testimonial-quote">“The best part is the coaching. I finally understood how to train safely and stay consistent.”</p><img class="testimonial-avatar" src="assets/images/member-1.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=82';" alt="Member review" loading="lazy" /><p class="testimonial-name">Vishnu Raj</p><p class="testimonial-tag">Member story placeholder</p></article>
+        <article class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-quote">“The atmosphere feels serious but welcoming. The trainers corrected my form from day one.”</p><img class="testimonial-avatar" src="assets/images/member-2.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=82';" alt="Member review" loading="lazy" /><p class="testimonial-name">Anjali Menon</p><p class="testimonial-tag">Member story placeholder</p></article>
+        <article class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-quote">“I joined for weight loss, but I stayed because of the community and the clear workout plan.”</p><img class="testimonial-avatar" src="assets/images/member-3.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&q=82';" alt="Member review" loading="lazy" /><p class="testimonial-name">Faizal Rahman</p><p class="testimonial-tag">Member story placeholder</p></article>
+      </div>
+      <div class="testimonial-dots" id="testimonialDots"><button class="testimonial-dot active" aria-label="Show testimonial 1"></button><button class="testimonial-dot" aria-label="Show testimonial 2"></button><button class="testimonial-dot" aria-label="Show testimonial 3"></button></div>
+    </div>
+  </section>
+
+
+  <!-- OUTLETS -->
+  <section class="outlets-section" id="outlets">
+    <div class="container">
+      <div class="center" data-animate>
+        <span class="section-kicker">All Branches In One Place</span>
+        <h2 class="section-title">Choose Your <em>Nearest Outlet</em></h2>
+        <p class="section-subtitle">One website can show every PERFOMITZ outlet with branch-wise phone numbers, directions, timings and WhatsApp enquiry.</p>
+      </div>
+
+      <div class="brand-proof" data-animate>
+        <div class="proof-pill"><strong>2017</strong><span>Established</span></div>
+        <div class="proof-pill"><strong>4.7★</strong><span>Justdial Rating</span></div>
+        <div class="proof-pill"><strong>245</strong><span>Ratings Listed</span></div>
+        <div class="proof-pill"><strong>2</strong><span>Contact Numbers</span></div>
+      </div>
+
+      <div class="outlet-grid">
+        <article class="outlet-feature" data-animate>
+          <div class="outlet-media">
+            <!-- Replace this preview image with real client-owned outlet photo: assets/images/outlet-kakkattil.jpg -->
+            <img src="assets/images/outlet-kakkattil.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=1100&q=84';" alt="PERFOMITZ Kakkattil outlet" loading="lazy" />
+            <span class="outlet-badge">Primary Outlet</span>
+          </div>
+          <div class="outlet-body">
+            <span class="section-kicker">Kakkattil Branch</span>
+            <h3>PERFOMITZ FITNESS CENTRE</h3>
+            <p>Full-service gym in Kakkattil with strength training, cardio, HIIT, CrossFit-style sessions, personal training, nutrition support, AC rooms, lockers, restrooms and showers.</p>
+            <ul class="outlet-data">
+              <li><i class="fas fa-location-dot"></i><span>Koothuparamba – Peringathoor – Kuttiady Rd, Kakkattil, Nadapuram, Kozhikode, Kerala 673507<br><small>Near Grand Textiles</small></span></li>
+              <li><i class="fas fa-phone"></i><span>+91 96332 07416 / +91 95441 80309</span></li>
+              <li><i class="fas fa-clock"></i><span>Morning 5:30 AM – 10:00 AM<br>Evening 4:30 PM – 10:00 PM</span></li>
+              <li><i class="fas fa-dumbbell"></i><span>Strength training, cardio workouts, HIIT, CrossFit-style sessions, fat-loss programs, personal training and nutrition plans.</span></li>
+            </ul>
+            <div class="outlet-actions">
+              <a class="btn btn-primary" href="#enquiry" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp Kakkattil</a>
+              <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Perfomitz%20fitness%20Kakkattil%20Kozhikode" target="_blank" rel="noopener"><i class="fas fa-location-arrow"></i> Get Directions</a>
+            </div>
+            <iframe title="PERFOMITZ Kakkattil location map" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Perfomitz+fitness+Kakkattil+Kozhikode&output=embed" style="width:100%;height:220px;border:0;border-radius:12px;margin-top:18px;display:block"></iframe>
+          </div>
+        </article>
+
+        <div class="outlet-list" data-animate>
+          <article class="mini-outlet">
+            <small>Orkkatteri Branch</small>
+            <h3>PERFOMITZ Orkkatteri</h3>
+            <p><i class="fas fa-location-dot" style="color:var(--accent-red);margin-right:6px"></i> Orkkatteri, Kozhikode, Kerala</p>
+            <p><i class="fas fa-phone" style="color:var(--accent-red);margin-right:6px"></i> +91 96332 07416</p>
+            <p><i class="fas fa-clock" style="color:var(--accent-red);margin-right:6px"></i> 5:30 AM – 10:00 AM / 4:30 PM – 10:00 PM</p>
+            <iframe title="PERFOMITZ Orkkatteri map" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Orkkatteri+Kozhikode+Kerala&output=embed" style="width:100%;height:180px;border:0;border-radius:12px;margin:10px 0;display:block"></iframe>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <a class="btn btn-sm btn-primary" href="#enquiry" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+              <a class="btn btn-sm btn-outline" href="https://www.google.com/maps/search/?api=1&query=Orkkatteri+Kozhikode+Kerala" target="_blank" rel="noopener"><i class="fas fa-location-arrow"></i> Directions</a>
+            </div>
+          </article>
+          <article class="mini-outlet">
+            <small>Thottilpalam Branch</small>
+            <h3>PERFOMITZ Thottilpalam</h3>
+            <p><i class="fas fa-location-dot" style="color:var(--accent-red);margin-right:6px"></i> Thottilpalam, Kozhikode, Kerala</p>
+            <p><i class="fas fa-phone" style="color:var(--accent-red);margin-right:6px"></i> +91 95441 80309</p>
+            <p><i class="fas fa-clock" style="color:var(--accent-red);margin-right:6px"></i> 5:30 AM – 10:00 AM / 4:30 PM – 10:00 PM</p>
+            <iframe title="PERFOMITZ Thottilpalam map" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Thottilpalam+Kozhikode+Kerala&output=embed" style="width:100%;height:180px;border:0;border-radius:12px;margin:10px 0;display:block"></iframe>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <a class="btn btn-sm btn-primary" href="#enquiry" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+              <a class="btn btn-sm btn-outline" href="https://www.google.com/maps/search/?api=1&query=Thottilpalam+Kozhikode+Kerala" target="_blank" rel="noopener"><i class="fas fa-location-arrow"></i> Directions</a>
+            </div>
+          </article>
+          <article class="mini-outlet">
+            <small>All Branches Enquiry</small>
+            <h3>One Site. Every Contact.</h3>
+            <p>Choose your nearest PERFOMITZ branch. Call directly, open Google Maps directions, or send a branch-specific WhatsApp enquiry — all from this website.</p>
+            <a class="btn btn-primary" href="#enquiry" target="_blank" rel="noopener">Enquire All Branches <i class="fab fa-whatsapp"></i></a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="enquiry">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-map" data-animate>
+          <!-- Replace map query with exact gym Google Maps embed -->
+          <iframe title="PERFOMITZ Kakkattil location map" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Perfomitz%20fitness%20Kakkattil%20Kozhikode%2011.6533276%2C75.6007443&output=embed"></iframe>
+        </div>
+        <div class="contact-info" data-animate>
+          <span class="section-kicker">Visit The Studio</span>
+          <h2>Ready to start?</h2>
+          <div class="contact-detail"><i class="fas fa-location-dot"></i><span>Koothuparamba – Peringathoor – Kuttiady Rd, Kakkattil, Nadapuram, Kozhikode, Kerala 673507<br /><small>Near Grand Textiles</small></span></div>
+          <div class="contact-detail"><i class="fas fa-phone"></i><span>+91 96332 07416 / +91 95441 80309</span></div>
+          <div class="contact-detail"><i class="fab fa-whatsapp"></i><span>WhatsApp admission enquiry available for branch, membership and trial details</span></div>
+          <div class="contact-hours"><h4>Opening Hours</h4><p>Daily Morning: 5:30 AM - 10:00 AM<br />Daily Evening: 4:30 PM - 10:00 PM</p></div>
+          <div class="contact-buttons"><a class="btn btn-lime" href="#enquiry" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Book Trial</a><a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Perfomitz%20fitness%20Kakkattil%20Kozhikode" target="_blank" rel="noopener"><i class="fas fa-location-arrow"></i> Get Directions</a></div>
+          <div id="branchPreview"></div>
+          <form class="contact-form" id="whatsappForm">
+            <select id="branch" required>
+              <option value="">Select Your Nearest Branch</option>
+              <option
+                value="kakkattil"
+                data-branch-name="PERFOMITZ Fitness Centre – Kakkattil"
+                data-whatsapp="919633207416"
+                data-phone="96332 07416"
+                data-address="Koothuparamba – Peringathoor – Kuttiady Rd, Kakkattil, Nadapuram, Kozhikode, Kerala 673507 (Near Grand Textiles)"
+                data-map="https://maps.app.goo.gl/jPy1jKBCooTEojm29">
+                Kakkattil (Primary Outlet)
+              </option>
+              <option
+                value="orkkatteri"
+                data-branch-name="PERFOMITZ Fitness Centre – Orkkatteri"
+                data-whatsapp="919633207416"
+                data-phone="96332 07416"
+                data-address="Orkkatteri, Kozhikode, Kerala"
+                data-map="https://www.google.com/maps/search/?api=1&query=Orkkatteri+Kozhikode+Kerala">
+                Orkkatteri
+              </option>
+              <option
+                value="thottilpalam"
+                data-branch-name="PERFOMITZ Fitness Centre – Thottilpalam"
+                data-whatsapp="919633207416"
+                data-phone="95441 80309"
+                data-address="Thottilpalam, Kozhikode, Kerala"
+                data-map="https://www.google.com/maps/search/?api=1&query=Thottilpalam+Kozhikode+Kerala">
+                Thottilpalam
+              </option>
+            </select>
+            <input type="text" id="name" placeholder="Your Full Name" required />
+            <input type="tel" id="phone" placeholder="Phone Number" required />
+            <select id="goal" required>
+              <option value="">Choose Your Goal</option>
+              <option value="Free Trial">Free Trial</option>
+              <option value="Membership Enquiry">Membership Enquiry</option>
+              <option value="Personal Training">Personal Training</option>
+              <option value="Weight Loss">Weight Loss</option>
+              <option value="Muscle Gain">Muscle Gain</option>
+              <option value="General Fitness">General Fitness</option>
+            </select>
+            <select id="time" required>
+              <option value="">Preferred Time</option>
+              <option value="Morning 5:30 AM - 10:00 AM">Morning 5:30 AM – 10:00 AM</option>
+              <option value="Evening 4:30 PM - 10:00 PM">Evening 4:30 PM – 10:00 PM</option>
+              <option value="Anytime">Anytime</option>
+            </select>
+            <textarea id="message" placeholder="Additional message (optional)" rows="3" style="background:var(--bg-soft);border:1px solid var(--border-light);padding:15px 16px;border-radius:10px;color:var(--text-dark);font-size:15px;font-family:var(--font-body);resize:vertical;transition:all .3s"></textarea>
+            <button class="btn btn-primary" type="submit">Send Enquiry to Selected Branch <i class="fas fa-paper-plane"></i></button>
+            <p style="font-size:12px;color:var(--text-dim-light);text-align:center;margin-top:10px">Your enquiry will be sent to the branch you select.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section style="background:var(--bg-soft);padding-top:70px;padding-bottom:80px">
+    <div class="container center" data-animate>
+      <span class="section-kicker">Ready to Start?</span>
+      <h2 class="section-title">Choose your nearest <em>PERFOMITZ</em> branch</h2>
+      <p class="section-subtitle">Select your branch and send your enquiry in one step. We'll get back with membership and trial details.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn btn-primary" href="#enquiry">Go to Enquiry Form <i class="fas fa-arrow-right"></i></a><a class="btn btn-outline" href="#schedule">View Schedule</a></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><div class="footer-logo">PERFO<span>MITZ</span></div><p class="footer-tagline">Fitness That Performs. Full-service fitness centre and gym in Kakkattil, Kozhikode with strength, cardio, HIIT and personal training.</p><div class="footer-socials"><a href="https://www.instagram.com/perfomitz_fitness_club/" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="https://www.facebook.com/perfomitz/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://wa.me/919633207416" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div>
+        <div class="footer-col"><h4>Explore</h4><ul><li><a href="#programs">Programs</a></li><li><a href="#schedule">Schedule</a></li><li><a href="#membership">Membership</a></li><li><a href="#trainers">Trainers</a></li></ul></div>
+        <div class="footer-col"><h4>Programs</h4><ul><li><a href="#programs">Strength</a></li><li><a href="#programs">HIIT</a></li><li><a href="#programs">Functional</a></li><li><a href="#programs">Personal Training</a></li></ul></div>
+        <div class="footer-col"><h4>Start</h4><p class="footer-tagline">Message us on WhatsApp and get today’s available trial timings.</p><a class="btn btn-lime" href="#enquiry" target="_blank" rel="noopener">Book Trial</a></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 PERFOMITZ Fitness. All rights reserved.</p><p>Website concept by ZYNEXS Intelligence.</p></div>
+    </div>
+  </footer>
+
+  <a href="#enquiry" class="float-wa" aria-label="Enquire Now"><i class="fas fa-paper-plane"></i><span class="float-wa-tooltip">Enquire Now</span></a>
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+  <div class="mobile-sticky-cta"><a class="btn btn-outline" href="#outlets">View Outlets</a><a class="btn btn-lime" href="#enquiry">Enquire Now</a></div>
+
+  <script>
+    // Ensure hero videos play after page load (silent catch for autoplay restrictions)
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.hero-video').forEach((video) => {
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {});
+        }
+      });
+    });
+
+    const WA_NUMBER = '919633207416';
+
+    const qs = (selector, parent = document) => parent.querySelector(selector);
+    const qsa = (selector, parent = document) => [...parent.querySelectorAll(selector)];
+
+    // Fix all broken images with reliable Unsplash fallbacks
+    const IMG_FALLBACKS = {
+      trainer: 'https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=600&q=80',
+      trainerF: 'https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=600&q=80',
+      strength: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&q=80',
+      hiit: 'https://images.unsplash.com/photo-1518611012118-4b2f7b62a2d3?w=800&q=80',
+      functional: 'https://images.unsplash.com/photo-1534367507873-db4d5e7b2c6b?w=800&q=80',
+      yoga: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80',
+      pt: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
+      nutrition: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80',
+      gym: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80',
+      facility: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80',
+      group: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80',
+      outlet: 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=1100&q=80',
+      member1: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80',
+      member2: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80',
+      member3: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&q=80',
+      before: 'https://images.unsplash.com/photo-1550345332-09e3ac987658?w=900&q=80',
+      after: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=900&q=80',
+    };
+    document.querySelectorAll('img').forEach(img => {
+      if (img.dataset.fixed) return;
+      const src = img.getAttribute('src') || '';
+      const alt = (img.alt || '').toLowerCase();
+      const cls = (img.className || '');
+      let fallback = IMG_FALLBACKS.gym;
+      if (cls.includes('trainer') || alt.includes('trainer')) fallback = alt.includes('priya') || alt.includes('meera') ? IMG_FALLBACKS.trainerF : IMG_FALLBACKS.trainer;
+      else if (alt.includes('strength')) fallback = IMG_FALLBACKS.strength;
+      else if (alt.includes('hiit') || alt.includes('cardio')) fallback = IMG_FALLBACKS.hiit;
+      else if (alt.includes('functional')) fallback = IMG_FALLBACKS.functional;
+      else if (alt.includes('yoga') || alt.includes('recovery')) fallback = IMG_FALLBACKS.yoga;
+      else if (alt.includes('personal') || alt.includes('coaching')) fallback = IMG_FALLBACKS.pt;
+      else if (alt.includes('nutrition')) fallback = IMG_FALLBACKS.nutrition;
+      else if (alt.includes('facility') || alt.includes('equipment')) fallback = IMG_FALLBACKS.facility;
+      else if (alt.includes('group') || alt.includes('class') || alt.includes('coach')) fallback = IMG_FALLBACKS.group;
+      else if (alt.includes('outlet') || alt.includes('perfomitz')) fallback = IMG_FALLBACKS.outlet;
+      else if (alt.includes('member') || alt.includes('review')) fallback = alt.includes('anjali') ? IMG_FALLBACKS.member2 : alt.includes('faizal') ? IMG_FALLBACKS.member3 : IMG_FALLBACKS.member1;
+      else if (alt.includes('before')) fallback = IMG_FALLBACKS.before;
+      else if (alt.includes('after')) fallback = IMG_FALLBACKS.after;
+      img.dataset.fixed = 'true';
+      img.addEventListener('error', function() { if (!this.dataset.loaded) { this.dataset.loaded = 'true'; this.src = fallback; } }, {once: true});
+      if (src.startsWith('assets/')) { img.src = fallback; }
+    });
+
+    // Preloader
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        qs('#preloader')?.classList.add('hidden');
+        document.body.classList.remove('loading');
+        runHeroIntro();
+      }, 950);
+    });
+
+    // Hero intro
+    function runHeroIntro(){
+      const words = qsa('.hero-headline .word');
+      const eyebrow = qs('#heroEyebrow');
+      const subtext = qs('#heroSubtext');
+      const buttons = qs('#heroBtns');
+      if(eyebrow){ eyebrow.style.transition = 'opacity .65s ease, transform .65s ease'; eyebrow.style.opacity = 1; eyebrow.style.transform = 'translateY(0)'; }
+      words.forEach((word, index) => {
+        word.style.transition = 'opacity .75s cubic-bezier(.22,.61,.36,1), transform .75s cubic-bezier(.22,.61,.36,1)';
+        setTimeout(() => { word.style.opacity = 1; word.style.transform = 'translateY(0)'; }, 140 + index * 95);
+      });
+      setTimeout(() => { if(subtext){ subtext.style.transition = 'opacity .7s ease, transform .7s ease'; subtext.style.opacity = 1; subtext.style.transform = 'translateY(0)'; } }, 560);
+      setTimeout(() => { if(buttons){ buttons.style.transition = 'opacity .7s ease, transform .7s ease'; buttons.style.opacity = 1; buttons.style.transform = 'translateY(0)'; } }, 720);
+    }
+
+    // Navbar + scroll top
+    const navbar = qs('#navbar');
+    const scrollTop = qs('#scrollTop');
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY > 80;
+      navbar?.classList.toggle('scrolled', scrolled);
+      scrollTop?.classList.toggle('visible', window.scrollY > 700);
+      setActiveNav();
+    }, {passive:true});
+    scrollTop?.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+    // Mobile menu
+    const hamburger = qs('#navHamburger');
+    const mobileMenu = qs('#mobileMenu');
+    function closeMobileMenu(){
+      hamburger?.classList.remove('active');
+      hamburger?.setAttribute('aria-expanded','false');
+      mobileMenu?.classList.remove('active');
+      mobileMenu?.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+    }
+    hamburger?.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      mobileMenu?.classList.toggle('active', isOpen);
+      mobileMenu?.setAttribute('aria-hidden', String(!isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    qsa('[data-nav]').forEach(link => link.addEventListener('click', closeMobileMenu));
+
+    // Active nav links
+    const sections = qsa('section[id]');
+    const navAnchors = qsa('.nav-links a');
+    function setActiveNav(){
+      let current = 'home';
+      sections.forEach(section => {
+        if(window.scrollY >= section.offsetTop - 140) current = section.id;
+      });
+      navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+    }
+
+    // Smooth anchor offset
+    qsa('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', e => {
+        const id = anchor.getAttribute('href');
+        if(!id || id === '#') return;
+        const target = qs(id);
+        if(!target) return;
+        e.preventDefault();
+        closeMobileMenu();
+        window.scrollTo({top: target.offsetTop - 68, behavior:'smooth'});
+      });
+    });
+
+    // Reveal animations
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.14, rootMargin:'0px 0px -40px 0px'});
+    qsa('[data-animate]').forEach(el => revealObserver.observe(el));
+
+    // Counters
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseInt(el.dataset.count, 10);
+        if(!Number.isFinite(target)) return;
+        let start = 0;
+        const duration = 1300;
+        const startTime = performance.now();
+        function update(now){
+          const progress = Math.min((now - startTime) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const value = Math.floor(start + (target - start) * eased);
+          el.textContent = target >= 1000 ? value.toLocaleString('en-IN') + '+' : value + (target === 15 ? '+' : '');
+          if(progress < 1) requestAnimationFrame(update);
+        }
+        requestAnimationFrame(update);
+        counterObserver.unobserve(el);
+      });
+    }, {threshold:.5});
+    qsa('[data-count]').forEach(el => counterObserver.observe(el));
+
+    // Schedule tabs
+    const scheduleData = {
+      monday:{day:'Monday', type:'Strength', icon:'fa-dumbbell', note:'A coach-led strength day focused on compound lifts, progressive overload, and clean form.'},
+      tuesday:{day:'Tuesday', type:'HIIT', icon:'fa-heart-pulse', note:'High-intensity cardio intervals designed for fat loss, stamina, and mental toughness.'},
+      wednesday:{day:'Wednesday', type:'Functional Training', icon:'fa-bolt', note:'Full-body functional movements built around power, mobility, core, and endurance.'},
+      thursday:{day:'Thursday', type:'Upper Body', icon:'fa-hand-fist', note:'Chest, back, shoulders, arms, and posture-focused accessory work with coached technique.'},
+      friday:{day:'Friday', type:'Lower Body', icon:'fa-person-running', note:'Leg strength, glutes, posterior chain, balance, and athletic lower-body conditioning.'},
+      saturday:{day:'Saturday', type:'Full Body Burn', icon:'fa-fire', note:'A high-energy full-body session mixing strength stations, conditioning, and team energy.'},
+      sunday:{day:'Sunday', type:'Recovery / Assessment', icon:'fa-spa', note:'Mobility, recovery, assessments, beginner orientation, and program planning.'}
+    };
+    const scheduleDay = qs('#scheduleDay');
+    const scheduleType = qs('#scheduleType');
+    const scheduleNote = qs('#scheduleNote');
+    const scheduleWhatsapp = qs('#scheduleWhatsapp');
+    qsa('.schedule-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        qsa('.schedule-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const data = scheduleData[tab.dataset.day];
+        if(!data) return;
+        scheduleDay.textContent = data.day;
+        scheduleType.innerHTML = `<i class="fas ${data.icon}"></i> ${data.type}`;
+        scheduleNote.textContent = data.note;
+        scheduleWhatsapp.href = "#enquiry";
+        scheduleWhatsapp.removeAttribute("target");
+        scheduleWhatsapp.removeAttribute("rel");
+        scheduleWhatsapp.innerHTML = `<i class="fas fa-paper-plane"></i> Enquire`;
+        const card = qs('#scheduleCard');
+        card.animate([{opacity:.65, transform:'translateY(8px)'},{opacity:1, transform:'translateY(0)'}], {duration:320, easing:'ease-out'});
+      });
+    });
+
+    // Trainer carousel drag on desktop
+    const wrapper = qs('#trainersWrapper');
+    const carousel = qs('#trainersCarousel');
+    let isDown = false, startX = 0, currentX = 0, lastX = 0;
+    function maxDrag(){ return wrapper && carousel ? Math.min(0, wrapper.clientWidth - carousel.scrollWidth) : 0; }
+    function setCarouselX(x){
+      if(window.innerWidth <= 860) return;
+      const bounded = Math.max(maxDrag(), Math.min(0, x));
+      currentX = bounded;
+      if(carousel) carousel.style.transform = `translateX(${bounded}px)`;
+    }
+    wrapper?.addEventListener('pointerdown', e => { if(window.innerWidth <= 860) return; isDown = true; startX = e.clientX - currentX; wrapper.setPointerCapture(e.pointerId); });
+    wrapper?.addEventListener('pointermove', e => { if(!isDown) return; setCarouselX(e.clientX - startX); });
+    wrapper?.addEventListener('pointerup', () => { isDown = false; lastX = currentX; });
+    wrapper?.addEventListener('pointerleave', () => { isDown = false; });
+    window.addEventListener('resize', () => setCarouselX(currentX));
+
+    // Before/after slider
+    const baSlider = qs('#baSlider');
+    const baBefore = qs('#baBefore');
+    const baHandle = qs('#baHandle');
+    function setBA(clientX){
+      if(!baSlider || !baBefore || !baHandle) return;
+      const rect = baSlider.getBoundingClientRect();
+      let x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+      const pct = (x / rect.width) * 100;
+      baBefore.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+      baHandle.style.left = pct + '%';
+    }
+    baSlider?.addEventListener('pointerdown', e => { baSlider.setPointerCapture(e.pointerId); setBA(e.clientX); baSlider.dataset.dragging = 'true'; });
+    baSlider?.addEventListener('pointermove', e => { if(baSlider.dataset.dragging === 'true') setBA(e.clientX); });
+    baSlider?.addEventListener('pointerup', () => { baSlider.dataset.dragging = 'false'; });
+    baSlider?.addEventListener('pointerleave', () => { baSlider.dataset.dragging = 'false'; });
+
+    // Testimonials
+    const testimonialCards = qsa('.testimonial-card');
+    const testimonialDots = qsa('.testimonial-dot');
+    let testimonialIndex = 0;
+    function showTestimonial(index){
+      testimonialIndex = index % testimonialCards.length;
+      testimonialCards.forEach((card, i) => card.classList.toggle('active', i === testimonialIndex));
+      testimonialDots.forEach((dot, i) => dot.classList.toggle('active', i === testimonialIndex));
+    }
+    testimonialDots.forEach((dot, i) => dot.addEventListener('click', () => showTestimonial(i)));
+    if(testimonialCards.length){ setInterval(() => showTestimonial((testimonialIndex + 1) % testimonialCards.length), 5200); }
+
+    // ── BRANCH ENQUIRY FORM ──────────────────────────────────
+    const whatsappForm = document.getElementById("whatsappForm");
+    const branchSelectEl = document.getElementById("branch");
+    const branchPreviewEl = document.getElementById("branchPreview");
+
+    // Branch preview on selection change
+    if (branchSelectEl && branchPreviewEl) {
+      branchSelectEl.addEventListener("change", function () {
+        const selectedOption = this.options[this.selectedIndex];
+        if (!selectedOption || !selectedOption.value) {
+          branchPreviewEl.innerHTML = "";
+          return;
+        }
+        branchPreviewEl.innerHTML = `
+          <div style="background:var(--bg-soft);border:1px solid var(--border-light);border-radius:12px;padding:18px;margin-bottom:16px">
+            <strong style="display:block;font-family:var(--font-display);font-size:20px;letter-spacing:1px;color:var(--text-dark);margin-bottom:6px">${selectedOption.dataset.branchName}</strong>
+            <p style="font-size:14px;color:var(--text-gray);margin:0 0 6px"><i class="fas fa-location-dot" style="color:var(--accent-red);width:18px"></i> ${selectedOption.dataset.address}</p>
+            <p style="font-size:14px;color:var(--text-gray);margin:0 0 8px"><i class="fas fa-phone" style="color:var(--accent-red);width:18px"></i> +91 ${selectedOption.dataset.phone}</p>
+            <a href="${selectedOption.dataset.map}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--accent-red);text-transform:uppercase;letter-spacing:1px"><i class="fas fa-location-arrow"></i> Open in Google Maps</a>
+          </div>
+        `;
+      });
+    }
+
+    // Form submit – sends WhatsApp to selected branch number
+    if (whatsappForm) {
+      whatsappForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const nameInput = document.getElementById("name");
+        const phoneInput = document.getElementById("phone");
+        const branchSelect = document.getElementById("branch");
+        const goalSelect = document.getElementById("goal");
+        const timeSelect = document.getElementById("time");
+        const messageInput = document.getElementById("message");
+
+        const selectedOption = branchSelect.options[branchSelect.selectedIndex];
+
+        if (!selectedOption || !selectedOption.value) {
+          alert("Please select a branch.");
+          return;
+        }
+
+        const branchName = selectedOption.dataset.branchName;
+        const branchWhatsapp = selectedOption.dataset.whatsapp;
+        const branchPhone = selectedOption.dataset.phone;
+        const branchAddress = selectedOption.dataset.address;
+        const branchMap = selectedOption.dataset.map;
+
+        const cleanWhatsappNumber = branchWhatsapp.replace(/[^0-9]/g, "");
+
+        const name = nameInput.value.trim();
+        const phone = phoneInput.value.trim();
+        const goal = goalSelect.value;
+        const time = timeSelect.value;
+        const message = messageInput.value.trim();
+
+        if (!name || !phone || !goal || !time) {
+          alert("Please fill all required fields.");
+          return;
+        }
+
+        if (!cleanWhatsappNumber || cleanWhatsappNumber.length < 10) {
+          alert("Selected branch WhatsApp number is missing or invalid.");
+          return;
+        }
+
+        const messageLines = [
+          "*New Gym Enquiry - PERFOMITZ*",
+          "",
+          "*Branch Details*",
+          `Selected Branch: ${branchName}`,
+          `Branch Contact: ${branchPhone}`,
+          `Branch Address: ${branchAddress}`,
+          "",
+          "*Customer Details*",
+          `Name: ${name}`,
+          `Phone: ${phone}`,
+          "",
+          "*Fitness Requirement*",
+          `Goal: ${goal}`,
+          `Preferred Time: ${time}`,
+          "",
+          "*Customer Message*",
+          message || "I want to know about membership/trial details.",
+          "",
+          "*Google Location*",
+          branchMap,
+          "",
+          "Please contact me with membership/trial details."
+        ];
+
+        const whatsappMessage = messageLines.join("\n");
+        const whatsappURL = `https://wa.me/${cleanWhatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+        window.open(whatsappURL, "_blank", "noopener");
+      });
+    }
+
+    // Legacy lead form fallback (kept for compatibility)
+    qs('#leadForm')?.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = qs('#leadName')?.value?.trim() || '';
+      const phone = qs('#leadPhone')?.value?.trim() || '';
+      const goal = qs('#leadGoal')?.value || '';
+      if(!name || !phone || !goal) return;
+      const msg = `Hi PERFOMITZ Fitness, my name is ${name}. Phone: ${phone}. I am interested in ${goal}. Please share membership details, available timings and nearest branch info.`;
+      window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+      e.target.reset();
+    });
+    // ── SMOOTH SCROLL TO ENQUIRY FORM ────────────────────────
+    document.querySelectorAll('a[href="#enquiry"]').forEach(link => {
+      link.addEventListener("click", function(e) {
+        e.preventDefault();
+        const target = document.querySelector("#enquiry");
+        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+  </script>
+</body>
+</html>
