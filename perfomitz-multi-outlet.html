@@ -345,6 +345,15 @@
       .schedule-meta{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
       .schedule-meta div{padding:14px 12px}
       .schedule-section .btn{width:100%;max-width:100%;min-width:0;white-space:normal;text-align:center;display:flex;justify-content:center;padding:15px 16px}
+      .schedule-section{overflow:hidden;padding:56px 0;width:100%;max-width:100%}
+      .schedule-section .container{width:min(100% - 28px,520px);max-width:520px;margin-inline:auto;padding-inline:0}
+      .schedule-wrap{width:100%;max-width:100%;min-width:0}
+      .schedule-wrap>*{min-width:0;max-width:100%}
+      .schedule-tabs{display:flex!important;overflow-x:auto;gap:8px;padding:0 0 12px;margin:0 0 22px;-webkit-overflow-scrolling:touch;scrollbar-width:none;width:100%;max-width:100%}
+      .schedule-tabs::-webkit-scrollbar{display:none}
+      .schedule-tab{flex:0 0 auto;min-width:48px;max-width:max-content;padding:10px 12px;border-radius:9px;white-space:nowrap;font-size:11px}
+      #scheduleCard,.schedule-card{width:100%!important;max-width:100%!important;min-width:0!important}
+      .schedule-section .btn-primary{padding:16px 18px;font-size:13px}
     }
     @media(min-width:769px){
       .hero-video-desktop{display:block}
@@ -550,7 +559,7 @@
           <span class="section-kicker">Weekly Flow</span>
           <h3>Book a class that matches your goal.</h3>
           <p>Choose a session, message us on WhatsApp, and we’ll confirm today’s available slots. Schedule can be customized based on real gym timings.</p>
-          <a class="btn btn-primary" href="#enquiry" target="_blank" rel="noopener">Book A Class <i class="fas fa-arrow-right"></i></a>
+          <a class="btn btn-primary" href="#enquiry">Book A Class <i class="fas fa-arrow-right"></i></a>
         </aside>
         <div data-animate>
           <div class="schedule-tabs" id="scheduleTabs" aria-label="Weekly schedule tabs">
